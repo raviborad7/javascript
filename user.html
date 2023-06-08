@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1 class="page-title">Welcome <span id="personName"></span> 😉</h1>
+    <form id="data-form" class="data-form user-form">
+        <div class="form-group profile-group">
+            <div class="profile-img-div">
+                <img id="profileImg" src="" alt="" />
+                <label for="profilePic"></label>
+            </div>
+            <input type="file" name="profilePic" class="form-fild" id="profilePic" />
+        </div>
+        <div class="form-group">
+            <label for="">Email :</label>
+            <input type="email" name="email" class="form-fild" id="email" disabled />
+        </div>
+        <div class="form-group">
+            <label for="">country :</label>
+            <input type="text" name="country" class="form-fild" id="country" disabled />
+        </div>
+        <div class="form-group">
+            <label for="">state :</label>
+            <input type="text" name="state" class="form-fild" id="state" disabled />
+        </div>
+        <div class="form-group">
+            <label for="">city :</label>
+            <input type="text" name="city" class="form-fild" id="city" disabled />
+        </div>
+        <div class="form-group">
+            <label for="">phone :</label>
+            <input type="text" name="phone" class="form-fild" id="phone" disabled />
+        </div>
+        <div class="form-group">
+            <label for="">Password :</label>
+            <input type="password" class="form-fild" id="password" disabled />
+            <a href="javascript:void(0)" onclick="resetPassword()" class="link">Reset Password</a>
+        </div>
+        <div class="form-group user-bottom-btns">
+            <button type="button" class="btn-style" onclick="editData()" id="editBtn">Edit</button>
+            <button type="button" class="btn-style red-btn" onclick="logOutData()" id="logOutBtn">log out</button>
+        </div>
+    </form>
+    <script src="user.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button class="btn-style user-page-back-btn" type="button" onclick="backPageChange()"><img src="img/left-arrow.svg"
+            alt=""></button>
+    <h1 class="page-title">User Data</h1>
+    <div class="large-container">
+        <div class="top-content">
+            <div class="search-wrap">
+                <input type="search" placeholder="search here" id="searchBar" onclick="searchData()"
+                    class="form-fild" />
+            </div>
+            <div class="select-page-wrap">
+                <!-- <select class="select-style" onchange="paginationFun()" id="selectPage">
+                    <option value="5" selected>5 row</option>
+                    <option value="10">10 row</option>
+                    <option value="15">15 row</option>
+                    <option value="20">20 row</option>
+                </select> -->
+                <input type="number" value="5" min="5" max="100" onkeydown="return false" class="select-style"
+                    onchange="paginationFun()" id="selectPage">
+            </div>
+        </div>
+        <div class="person-info">
+            <table class="user-data-table">
+                <thead>
+                    <tr>
+                        <th>Profile</th>
+                        <th onclick="sortTableDatas({name:'nameValue', index:0})">Name
+                            <button type="button" class="sort-btn"><img src="img/down-arrow.svg" /></button>
+                        </th>
+                        <th onclick="sortTableDatas({name:'emailValue', index:1})">Email
+                            <button type="button" class="sort-btn"><img src="img/down-arrow.svg" /></button>
+                        </th>
+                        <th onclick="sortTableDatas({name:'cityValue', index:2})">City
+                            <button type="button" class="sort-btn"><img src="img/down-arrow.svg" /></button>
+                        </th>
+                        <th onclick="sortTableDatas({name:'stateValue', index:3})">State
+                            <button type="button" class="sort-btn"><img src="img/down-arrow.svg" /></button>
+                        </th>
+                        <th onclick="sortTableDatas({name:'countryValue', index:4})">Country
+                            <button type="button" class="sort-btn"><img src="img/down-arrow.svg" /></button>
+                        </th>
+                        <th onclick="sortTableDatas({name:'phoneValue', index:5})">Phone No
+                            <button type="button" class="sort-btn"><img src="img/down-arrow.svg" /></button>
+                        </th>
+                        <th>Status</th>
+                        <th>Edit / Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="data-list"></tbody>
+            </table>
+            <div class="table-bottom-btns">
+                <button type="button" onclick="nextPrevFun('prev')" id="prevButton">Prev</button>
+                <ul id="paginationList" class="pagination-list"></ul>
+                <button type="button" onclick="nextPrevFun('next')" id="nextButton">Next</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="users-data.js"></script>
+
+</html>

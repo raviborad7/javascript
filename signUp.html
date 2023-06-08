@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 id="main-title" class="page-title">Sign Up Form</h1>
+    <form id="data-form" class="data-form">
+        <div class="form-group role-wrap">
+            <!-- <label for="">Select Role</label> -->
+            <select id="role" onchange="roleChnage()" class="select-style">
+                <option value="user" selected>User</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
+        <div class="form-group profile-group">
+            <div class="profile-img-div">
+                <img id="profileImg" src="img/user.png" alt="" />
+                <label for="profilePic"></label>
+            </div>
+            <input type="file" name="profilePic" class="form-fild" id="profilePic" />
+            <small id="profilePicError"></small>
+        </div>
+        <div class="form-group">
+            <label for="">Name* :</label>
+            <input type="text" onkeydown="return /[a-z]/i.test(event.key)" name="fname" placeholder="Enter Name*"
+                class="form-fild" id="name" />
+            <small id="nameError"></small>
+        </div>
+        <div class="form-group">
+            <label for="">Email* :</label>
+            <input type="email" name="email" placeholder="Enter Email*" class="form-fild" id="email" />
+            <small id="emailError"></small>
+        </div>
+        <div class="form-group">
+            <label for="">Select country* :</label>
+            <select name="" id="country" onchange="countryChange(this)" class="form-fild"></select>
+            <small id="countryError"></small>
+        </div>
+        <div class="form-group">
+            <label for="">Select state* :</label>
+            <select name="" id="state" onchange="stateChange(this)" class="form-fild"></select>
+            <small id="stateError"></small>
+        </div>
+        <div class="form-group">
+            <label for="">Select city* :</label>
+            <select name="" id="city" onchange="cityChange(this)" class="form-fild"></select>
+            <small id="cityError"></small>
+        </div>
+        <div class="form-group">
+            <label for="">Phone number* :</label>
+            <!-- <input type="text" name="phoneNumber" onkeydown="return /[0-9]/i.test(event.key)"
+                placeholder="Enter Phone Number*" class="form-fild" id="phone" /> -->
+            <input type="number" name="phoneNumber" placeholder="Enter Phone Number*" class="form-fild" id="phone" />
+            <small id="phoneError"></small>
+        </div>
+
+        <div class="form-group qus-ans">
+            <label for="">Question no 1* :</label>
+            <select name="" id="question1" class="form-fild question-select"></select>
+            <small class="qus" id="answer1Error"></small>
+        </div>
+        <div class="form-group">
+            <label for="">Answer no 1* :</label>
+            <input type="text" name="answer" placeholder="Enter Question 1 answer*" class="form-fild" id="answer1" />
+        </div>
+        <div class="form-group qus-ans">
+            <label for="">Question no 2* : </label>
+            <select name="" id="question2" class="form-fild question-select"></select>
+            <small class="qus" id="answer2Error"></small>
+        </div>
+        <div class="form-group">
+            <label for="">Answer no 2* :</label>
+            <input type="text" name="answer" placeholder="Enter Question 2 answer*" class="form-fild" id="answer2" />
+        </div>
+        <div class="form-group qus-ans">
+            <label for="">Question no 3* :</label>
+            <select name="" id="question3" class="form-fild question-select"></select>
+            <small class="qus" id="answer3Error"></small>
+        </div>
+        <div class="form-group">
+            <label for="">Answer no 3* :</label>
+            <input type="text" name="answer" placeholder="Enter Question 3 answer*" class="form-fild" id="answer3" />
+        </div>
+        <div class="form-group signup-pw">
+            <label for="">Password* :</label>
+            <input type="password" name="password" placeholder="Enter Password*" class="form-fild" id="password" />
+            <small id="passwordError"></small>
+            <a href="javascript:void(0)" onmouseover="togglePassword('pw')" onmouseout="togglePassword('pw')"
+                class="show-hide-btn"></a>
+        </div>
+        <div class="form-group signup-pw">
+            <label for="">Confirm password* :</label>
+            <input type="password" name="confirmPassword" placeholder="Enter confirm Password*" class="form-fild"
+                id="confirmPassword" />
+            <small id="confirmPasswordError"></small>
+            <a href="javascript:void(0)" onmouseover="togglePassword('confirmPw')"
+                onmouseout="togglePassword('confirmPw')" class="show-hide-btn"></a>
+        </div>
+        <div id="admin-pw" class="form-group role-wrap admin-pw signup-pw"></div>
+        <div class="form-group w-100 text-center">
+            <button type="button" class="btn-style" id="addBtn" onclick="addData()">submit</button>
+            <br>
+            <p id="haveAccount">Have an account?
+                <a href="login.html" onclick="signIn()" id="signInLink" class="link">Sign In</a>
+            </p>
+        </div>
+    </form>
+    <script src="signUp.js"></script>
+</body>
+
+</html>
